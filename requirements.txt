@@ -1,8 +1,15 @@
 langchain
+langchain-community
 langgraph
-openai
-faiss-cpu
+langchain-anthropic
+langchain-pinecone
+langchain-huggingface
 fastapi
 uvicorn
 python-dotenv
+pinecone-client
+faiss-cpu
 tiktoken
+pypdf
+sentence-transformers
+langchain-text-splitters
