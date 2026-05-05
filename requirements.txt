@@ -13,3 +13,9 @@ tiktoken
 pypdf
 sentence-transformers
 langchain-text-splitters
+joblib 
+shap
+pandas
+xgboost
+scikit-learn
+langchain-experimental
