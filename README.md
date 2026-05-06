@@ -24,9 +24,10 @@ LangGraph Agent (conditional routing)
      └── direct_node ─────> Claude ─ Direct Answer
 ```
 For conditional routing:
- |--- route_query() is responsible. It reads the query and returns a string     telling LangGraph which node to go to next.
 
- |--- graph.add_conditional_edges() makes it "conditional" — instead of always going to the same next node, it checks the router function output first, depending on this it makes a decision - summarize, RAG, predict or direct.
+- **route_query()** is responsible. It reads the query and returns a string     telling LangGraph which node to go to next.
+
+- **graph.add_conditional_edges()** makes it "conditional" — instead of always going to the same next node, it checks the router function output first, depending on this it makes a decision - summarize, RAG, predict or direct.
 ---
 
 ## Tech Stack
