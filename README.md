@@ -156,6 +156,61 @@ Swagger docs at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
+---
+
+## Deployment (OPTIONAL)
+
+### Before Deploying
+
+The `lending_club.csv` file (300MB) cannot be pushed to GitHub. Run these locally first to generate the required artifacts:
+
+```bash
+python -m ml.train          
+python -m ml.summarize_data 
+```
+
+Then commit the generated files:
+
+```bash
+git add ml/model.pkl ml/features.pkl ml/encoders.pkl
+git add data/credit_risk_report.txt
+git commit -m "add trained model and RAG knowledge base"
+git push
+```
+
+Make sure your `.gitignore` excludes the CSV but includes the report:
+
+```gitignore
+data/*
+!data/credit_risk_report.txt
+```
+
+---
+
+### Railway 
+
+1. Go to [railway.app](https://railway.app) and sign in with GitHub
+2. Click **New Project** → **Deploy from GitHub repo**
+3. Select `langgraph-rag-agent`
+4. Go to **Variables** tab and add:
+   ```
+   ANTHROPIC_API_KEY=your_key
+   PINECONE_API_KEY=your_key
+   ```
+5. Go to **Settings** → **Start Command** and set:
+   ```
+   uvicorn app.main:app --host 0.0.0.0 --port $PORT
+   ```
+6. Click **Deploy**
+
+Your API will be live at:
+```
+https://langgraph-rag-agent.up.railway.app/docs
+```
+
+---
+
+
 ## API Endpoints
 
 ### `GET /health`
