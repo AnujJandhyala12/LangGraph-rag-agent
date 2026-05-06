@@ -187,7 +187,7 @@ data/*
 
 ---
 
-### Railway 
+### Deploying using Railway (option I used)
 
 1. Go to [railway.app](https://railway.app) and sign in with GitHub
 2. Click **New Project** → **Deploy from GitHub repo**
