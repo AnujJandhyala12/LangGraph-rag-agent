@@ -39,7 +39,7 @@ For conditional routing:
 | Vector Database | Pinecone |
 | Embeddings | HuggingFace `all-MiniLM-L6-v2` |
 | Chunking | Semantic Chunking (LangChain Experimental) |
-| Retrieval | MMR (Maximal Marginal Relevance) |
+| Retrieval | MMR (k=4, fetch_k=20, lambda=0.7) |
 | ML Model | XGBoost Classifier |
 | Explainability | SHAP |
 | Backend | FastAPI + Uvicorn |
